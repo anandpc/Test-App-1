@@ -1,0 +1,3 @@
+include ':mathopslib'
+include ':app'
+rootProject.name = "Test App 1"
