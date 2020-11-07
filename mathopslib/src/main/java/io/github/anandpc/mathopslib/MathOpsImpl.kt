@@ -9,7 +9,7 @@ class MathOpsImpl : MathOps {
 
     override fun performOps(activity: Activity, bundle: Bundle) {
         val intent = Intent()
-        intent.setClassName("com.example.B", "com.example.B.ActivityB")
+        intent.setClassName("io.github.anandpc", "io.github.anandpc.testapp2")
         activity.startActivityFromChild(activity, intent, 100)
     }
 }
