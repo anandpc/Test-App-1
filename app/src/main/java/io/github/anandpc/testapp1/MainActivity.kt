@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import io.github.anandpc.mathopslib.MathOps
 import io.github.anandpc.mathopslib.MathOpsImpl
@@ -32,8 +33,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun performOperation() {
-        val num1 = Integer.parseInt(findViewById<EditText>(R.id.editTextNumber1).toString())
-        val num2 = Integer.parseInt(findViewById<EditText>(R.id.editTextNumber2).toString())
+        var num1: Int = 0
+        var num2: Int = 0
+        try {
+            num1 =
+                Integer.parseInt(findViewById<EditText>(R.id.editTextNumber1).text.toString())
+            num2 =
+                Integer.parseInt(findViewById<EditText>(R.id.editTextNumber2).text.toString())
+        } catch (e: NumberFormatException) {
+            Toast.makeText(this, "Enter a valid number", Toast.LENGTH_SHORT).show()
+        }
         val bundle = Bundle()
         bundle.putInt("NUM_1", num1)
         bundle.putInt("NUM_2", num2)
