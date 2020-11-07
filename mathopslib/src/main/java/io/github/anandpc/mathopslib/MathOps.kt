@@ -4,5 +4,5 @@ import android.app.Activity
 import android.os.Bundle
 
 interface MathOps {
-    fun performOps(activity: Activity, bundle: Bundle)
+    fun launchTestApp2(activity: Activity, bundle: Bundle)
 }
